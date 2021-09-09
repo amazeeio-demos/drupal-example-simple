@@ -11,26 +11,26 @@ tasks:
 
   post-rollout:
     # Enable once config sync has been setup.
-    # - run:
-    #     name: drush cim
-    #     command: drush -y cim
-    #     service: cli
-    #- run:
-    #    name: drush updb
-    #    command: drush -y updb
-    #    service: cli
-    #- run:
-    #    name: drush cr
-    #    command: drush -y cr
-    #    service: cli
+     - run:
+         name: drush cim
+         command: drush -y cim
+         service: cli
+    - run:
+        name: drush updb
+        command: drush -y updb
+        service: cli
+    - run:
+        name: drush cr
+        command: drush -y cr
+        service: cli
 
 
 
-#environments:
-  #main:
-    ## routes:
-    #cronjobs:
-    #  - name: drush cron
-    #    schedule: "*/15 * * * *"
-    #    command: drush cron
-    #    service: cli
+environments:
+  main:
+    # routes:
+    cronjobs:
+      - name: drush cron
+        schedule: "*/15 * * * *"
+        command: drush cron
+        service: cli
